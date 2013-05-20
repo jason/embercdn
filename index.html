@@ -9,17 +9,37 @@
 <body>
 
 <script type="text/x-handlebars">
-  
-<h2><a {{action "click" "#intro"}}>Introduction</a></h2>
 
-  <div id="intro"  class="sidebarlink">
+  <h2>{{#linkTo "index"}}Introduction{{/linkTo}}</h2>
+  {{outlet 'intro'}}
+
+  <h2>{{#linkTo "how"}}How it works{{/linkTo}}</h2>
+  {{outlet 'how'}}
+
+  <h2>{{#linkTo "advantage"}}The i5labs Advantage{{/linkTo}}</h2>
+  {{outlet 'advantage'}}
+
+<div id="plans">
+  Choose a plan and start streaming today:
+    <ul>
+    {{#each model}}
+      <li>{{transfer}} GB</li>
+      <li>{{storage}} GB</li>
+      <li>${{price}}</li>
+      <li {{action 'click' this}}>Sign up!</li>
+    {{/each}}
+    </ul>
+
+  {{outlet}}
+
+</script>
+
+<script type="text/x-handlebars" data-template-name="intro">
   <p>i5labs is a provider of global content delivery network services. Stream video and other content anywhere at lightning-fast speeds. This is all made possible by our global peer-based network tied directly into the backbone of the Internet.
   <p>Our content management and reporting console makes it easy to manage content while maximizing delivery efficiency. We deliver real time analytics and reporting tools, all from a simple browser based web interface.
   <p>Whether you need to deliver millions of streams of live HD video worldwide, or need large file delivery, our network scales to meet your needs.
-</div>
-
-<h2><a {{action "click" "#how"}}>How it works</a></h2>
-<div id="how" class="sidebarlink">
+</script>
+<script type="text/x-handlebars" id="how">
   Peering<br>
 
   <p>By connecting with our peers servers, our CDN bypasses internet traffic for faster streaming of your media content while maintaining high standards of quality control.</p>
@@ -35,29 +55,15 @@
   
   <br><br>Massive Scalability<br>
   Easily grow your site to millions of viewers.
-</div>
-<h2><a {{action "click" "#advantage"}}>The i5labs Advantage</a></h2>
-<div class="sidebarlink" id="advantage">
+</script>
+
+<script type="text/x-handlebars" id="advantage">
   <p>By choosing i5labs content delivery solutions, you receive a level of individualized service unheard of in the content delivery sector. 
   <p>We will select a best of breed backbone provider along with our innovative services allowing us to provide you with unparalleled functionality between your site and content.We will work with you on a personal level that meets your specific needs to insure effective development and deployment of a unique solution.
   <p>Any time you require additional assistance, we are never more than a phone call (email, text or tweet) away, standing by, ready to answer any questions you may have.
   <p>Let us partner with you to realize your vision.
   <p>Jason Wong<br>CEO
-</div>
-    
-Choose a plan and start streaming today:
-  <ul>
-    {{#each model}}
-      <li>{{transfer}} GB</li>
-  <li>{{storage}} GB</li>
-  <li>${{price}}</li>
-  <li>{{#linkTo 'plan' this}}Sign up!{{/linkTo}}</li>
-  </ul>
-{{/each}}
-{{outlet}}
-
 </script>
-
 <script type="text/x-handlebars" data-template-name="plan">
   <li>{{transfer}} GB</li>
   <li>{{storage}} GB</li>
@@ -70,11 +76,6 @@ Choose a plan and start streaming today:
   <h2>{{price}}</h2>
   {{outlet}}
 </script>
-
-
-
-
-
   
   <script src="js/libs/jquery-1.9.1.js"></script>
   <script src="js/libs/handlebars-1.0.0-rc.3.js"></script>

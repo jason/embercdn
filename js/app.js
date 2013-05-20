@@ -39,15 +39,15 @@ App.HowRoute = Ember.Route.extend({
 });
 App.AdvantageRoute = Ember.Route.extend({
   renderTemplate: function() {
-    this.render({ outlet: 'advantage' });
+    this.render('advantage', { outlet: 'advantage' });
   }
 });
 
  App.ApplicationController = Ember.ObjectController.extend({
    click: function(evt) {
-      var plandata = App.Plan.find(evt);
-      console.log(plandata.transfer);
-      console.log(plandata.stroage);
+      window.plandata = App.Plan.find(evt.id);
+      console.log(evt.id);
+      console.log(this);
    }
  });
 App.PlansController = Ember.ObjectController.extend({
