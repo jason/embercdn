@@ -43,11 +43,13 @@ App.AdvantageRoute = Ember.Route.extend({
   }
 });
 
-App.ApplicationController = Ember.ObjectController.extend({
-  click: function(evt) {
-    $(evt).toggle();
-  }
-});
+ App.ApplicationController = Ember.ObjectController.extend({
+   click: function(evt) {
+      var plandata = App.Plan.find(evt);
+      console.log(plandata.transfer);
+      console.log(plandata.stroage);
+   }
+ });
 App.PlansController = Ember.ObjectController.extend({
   // initial value
   isExpanded: false,
@@ -60,13 +62,13 @@ App.PlansController = Ember.ObjectController.extend({
     this.set('isExpanded', false);
   }
 });
+
 App.Store = DS.Store.extend({
     revision: 12,
     adapter: 'DS.FixtureAdapter'
 });
 
 App.Plan = DS.Model.extend({
-  // e.g. Surface, Sectional, Pathways, Visual Glossary
   transfer: DS.attr('number'),
   storage: DS.attr('number'),
   price: DS.attr('number')
