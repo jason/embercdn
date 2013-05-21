@@ -44,12 +44,17 @@ App.AdvantageRoute = Ember.Route.extend({
 });
 
  App.ApplicationController = Ember.ObjectController.extend({
-   click: function(evt) {
-      window.plandata = App.Plan.find(evt.id);
-      console.log(evt.id);
-      console.log(this);
+   showPlan: function(evt) {
+      var plandata = App.Plan.find(evt.id);
+      this.set('transfer', plandata.get('transfer'));
+      this.set('storage', plandata.get('storage'));
+      this.set('price', plandata.get('price'));
+      $('#plans').hide();
+      $('#plan').show();
    }
+
  });
+
 App.PlansController = Ember.ObjectController.extend({
   // initial value
   isExpanded: false,

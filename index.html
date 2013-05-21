@@ -26,10 +26,18 @@
       <li>{{transfer}} GB</li>
       <li>{{storage}} GB</li>
       <li>${{price}}</li>
-      <li {{action 'click' this}}>Sign up!</li>
+      <li {{action 'showPlan' this}}>Sign up!</li>
     {{/each}}
     </ul>
+    </div>
+<div id="plan">
 
+  {{transfer}} GB transfer
+ {{storage}} GB storage
+
+ ${{price}} per month
+
+</div>
   {{outlet}}
 
 </script>
@@ -65,18 +73,12 @@
   <p>Jason Wong<br>CEO
 </script>
 <script type="text/x-handlebars" data-template-name="plan">
-  <li>{{transfer}} GB</li>
-  <li>{{storage}} GB</li>
+  <li>{{view.transfer}} GB</li>
+  <li>{{view.storage}} GB</li>
   <li>${{price}}</li>
-  <li>{{#linkTo 'plans' this}}Sign up!{{/linkTo}}</li>
+  <li><button>Sign up!</button></li>
 </script>
 
-<script type="text/x-handlebars" id="plans">
-  <h1>{{transfer}}</h1>
-  <h2>{{price}}</h2>
-  {{outlet}}
-</script>
-  
   <script src="js/libs/jquery-1.9.1.js"></script>
   <script src="js/libs/handlebars-1.0.0-rc.3.js"></script>
   <script src="js/libs/ember-1.0.0-rc.3.js"></script>
