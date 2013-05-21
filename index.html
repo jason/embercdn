@@ -18,6 +18,7 @@
 
   <h2>{{#linkTo "advantage"}}The i5labs Advantage{{/linkTo}}</h2>
   {{outlet 'advantage'}}
+30 Day Free Trial
 
 <div id="plans">
   Choose a plan and start streaming today:
@@ -30,12 +31,13 @@
     {{/each}}
     </ul>
     </div>
-<div id="plan">
+<div id="plan" class="hidden">
 
-  {{transfer}} GB transfer
- {{storage}} GB storage
+  {{selectedPlan.transfer}} GB transfer ($2 / additional gigabyte)
+  monthly transfer
+  {{selectedPlan.storage}} GB storage ($2 / additional gigabyte)
 
- ${{price}} per month
+  <div>${{selectedPlan.price}}</div> per month
 
 </div>
   {{outlet}}
@@ -60,20 +62,20 @@
   <br><br>
   Complete Content Control<br>
   Static and live content is managed directly through our online dashboard, providing an unprecedented level of direct control over content.
-  
+
   <br><br>Massive Scalability<br>
   Easily grow your site to millions of viewers.
 </script>
 
 <script type="text/x-handlebars" id="advantage">
-  <p>By choosing i5labs content delivery solutions, you receive a level of individualized service unheard of in the content delivery sector. 
+  <p>By choosing i5labs content delivery solutions, you receive a level of individualized service unheard of in the content delivery sector.
   <p>We will select a best of breed backbone provider along with our innovative services allowing us to provide you with unparalleled functionality between your site and content.We will work with you on a personal level that meets your specific needs to insure effective development and deployment of a unique solution.
   <p>Any time you require additional assistance, we are never more than a phone call (email, text or tweet) away, standing by, ready to answer any questions you may have.
   <p>Let us partner with you to realize your vision.
   <p>Jason Wong<br>CEO
 </script>
 <script type="text/x-handlebars" data-template-name="plan">
-  <li>{{view.transfer}} GB</li>
+  <li>{{selectedPlan.transfer}} GB</li>
   <li>{{view.storage}} GB</li>
   <li>${{price}}</li>
   <li><button>Sign up!</button></li>

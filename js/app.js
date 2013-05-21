@@ -4,9 +4,6 @@ App.Router.map(function() {
   // put your routes here
   this.route('how');
   this.route('advantage');
-  this.resource('plans', function() {
-    this.resource('plan', { path: ':plan_id'});
-  });
 });
 
 App.ApplicationRoute = Ember.Route.extend({
@@ -14,29 +11,19 @@ App.ApplicationRoute = Ember.Route.extend({
     return App.Plan.find();
   }
 });
-//App.PlansRoute = Ember.Route.extend({
-//   model: function() {
-//     return App.Plan.find();
-//   }  
-//});
-//App.ApplicationController = Ember.Controller.extend({
-//  currentSidebarContent: 'intro',
 
-//   changeSidebarContent: function() {
-//     this.render({ outlet: this.get('currentSidebarContent'); });
-
-//   }.property('currentSidebarContent')
-// });
 App.IndexRoute = Ember.Route.extend({
   renderTemplate: function() {
     this.render('intro', { outlet: 'intro' });
    }
  });
+
 App.HowRoute = Ember.Route.extend({
   renderTemplate: function() {
     this.render('how', { outlet: 'how' });
   }
 });
+
 App.AdvantageRoute = Ember.Route.extend({
   renderTemplate: function() {
     this.render('advantage', { outlet: 'advantage' });
@@ -45,28 +32,19 @@ App.AdvantageRoute = Ember.Route.extend({
 
  App.ApplicationController = Ember.ObjectController.extend({
    showPlan: function(evt) {
-      var plandata = App.Plan.find(evt.id);
-      this.set('transfer', plandata.get('transfer'));
-      this.set('storage', plandata.get('storage'));
-      this.set('price', plandata.get('price'));
+      this.setPlan(evt);
+      this.viewPlan();
+    },
+
+    setPlan: function(evt) {
+      this.set('selectedPlan', App.Plan.find(evt.id));
+    },
+
+    viewPlan: function() {
       $('#plans').hide();
       $('#plan').show();
    }
-
  });
-
-App.PlansController = Ember.ObjectController.extend({
-  // initial value
-  isExpanded: false,
-
-  expand: function() {
-    this.set('isExpanded', true);
-  },
-
-  contract: function() {
-    this.set('isExpanded', false);
-  }
-});
 
 App.Store = DS.Store.extend({
     revision: 12,
