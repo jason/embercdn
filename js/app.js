@@ -10,6 +10,7 @@ App.ApplicationRoute = Ember.Route.extend({
   model: function() {
     return App.Plan.find();
   }
+
 });
 
 App.IndexRoute = Ember.Route.extend({
@@ -35,7 +36,10 @@ App.AdvantageRoute = Ember.Route.extend({
       this.setPlan(evt);
       this.viewPlan();
     },
-
+    showThis: function() {
+      console.log("hello");
+      return(5)
+    },
     setPlan: function(evt) {
       this.set('selectedPlan', App.Plan.find(evt.id));
     },
@@ -46,6 +50,12 @@ App.AdvantageRoute = Ember.Route.extend({
    }
  });
 
+App.tabView = Ember.View.extend({
+  classNameBindings: ['active:openTab:closedTab'],
+    active: function() {
+      return this.get('childViews.firstObject.active');
+  }.property('childViews.firstObject.active')
+}),
 App.Store = DS.Store.extend({
     revision: 12,
     adapter: 'DS.FixtureAdapter'
