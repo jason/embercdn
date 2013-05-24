@@ -36,7 +36,10 @@ App.AdvantageRoute = Ember.Route.extend({
       this.setPlan(evt);
       this.viewPlan();
     },
-
+    showThis: function() {
+      console.log("hello");
+      return(5)
+    },
     setPlan: function(evt) {
       this.set('selectedPlan', App.Plan.find(evt.id));
     },
