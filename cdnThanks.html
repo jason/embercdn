@@ -47,7 +47,7 @@
     
   </head>
   <body>
-<script type="text/x-handlebars">  
+  
     <div id="container">
       <a href="index.html" id="title"><img src="images/logoTitle.jpg" alt="i5labs" /></a>
       <h1><span class="displace">i5labs</span></h1>
@@ -62,25 +62,26 @@
             
       <div id='cdn'>
   <div id='cdnNavigation'>
-    <div id='closeTab'>
+    <div id='openTab'>
       <div class='flourish'>
         <div class='flourishTop'></div>
         <div class='flourishMiddle'></div>
         <div class='flourishBottom'></div>
       </div>
-        {{#linkTo "index"}}<img alt='Introduction' src='images/introductionTab.png' />{{/linkTo}}
-
-
+      <img alt='Introduction' src='images/introductionTab.png' />
+      <p>i5labs is a provider of global content delivery network services. Stream video and other content anywhere at lightning-fast speeds. This is all made possible by our global peer-based network tied directly into the backbone of the Internet.</p>
+      <p>Our content management and reporting console makes it easy to manage content while maximizing delivery efficiency. We  deliver real time analytics and reporting tools, all from a simple browser based web interface.</p>
+      <p>Whether you need to deliver millions of streams of live HD video worldwide, or need large file delivery, our network scales to meet your needs.</p>
     </div>
-    <div>{{outlet 'intro'}}</div>
     <div class='closedTab'>
       <div class='flourish'>
         <div class='flourishTop'></div>
         <div class='flourishMiddle'></div>
         <div class='flourishBottom'></div>
       </div>
-        {{#linkTo "how"}}<img alt='How it Works' src='images/howitworksTab.png' />{{/linkTo}}
-  {{outlet 'how'}}
+      <a href='cdnWorks.html'>
+        <img alt='How it Works' src='images/howitworksTab.png' />
+      </a>
     </div>
     <div class='closedTab'>
       <div class='flourish'>
@@ -101,66 +102,16 @@
     </div>
     <img alt='30 Day Free Trial' src='images/freetrialTab.png' />
     <div id='cdnPlanChooser'>
-      <p>Choose a plan and start streaming today:</p>
-      <div id='cdnPlanOption'>
-        <a href='cdnOption1.html'>
-          <img alt='50GB transfer / 1GB Storage / $100 per month' src='images/cdnOption1.png' />
-        </a>
-        <a href='cdnOption2.html'>
-          <img alt='150GB transfer / 10GB Storage / $250 per month' src='images/cdnOption2.png' />
-        </a>
-        <a href='cdnOption3.html'>
-          <img alt='500GB transfer / 25GB Storage / $500 per month' src='images/cdnOption3.png' />
-        </a>
-        <a href='cdnOption4.html'>
-          <img alt='1.25TB transfer / 50GB Storage / $1000 per month' src='images/cdnOption4.png' />
-        </a>
-        <a href='cdnOption5.html'>
-          <img alt='Custom Plans Available' src='images/cdnOption5.png' />
-        </a>
-        <p>*all plans include 30 day free trial and $100 setup fee</p>
-      </div>
+      <p>
+        Thank you for partnering with i5labs.
+        <br />
+        We will contact you soon with your new account.
+      </p>
     </div>
   </div>
 </div>
-</script>
-<script type="text/x-handlebars" data-template-name="intro">
-  <div class="flourishBottom"></div>
-  <div class="openTab">
-      <p>i5labs is a provider of global content delivery network services. Stream video and other content anywhere at lightning-fast speeds. This is all made possible by our global peer-based network tied directly into the backbone of the Internet.</p>
-      <p>Our content management and reporting console makes it easy to manage content while maximizing delivery efficiency. We deliver real time analytics and reporting tools, all from a simple web interface.</p>
-      <p>Whether you need to deliver millions of streams of live HD video worldwide, or need large file delivery, our network scales to meet your needs.</p>
-    </div>
-</script>
-<script type="text/x-handlebars" id="how">
-  <div class="openTab">
-      <p>
-        Peering
-        <br />
-        By connecting with our peers' servers, our CDN bypasses internet traffic for faster streaming of your media content while maintaining high standards of quality control.
-      </p>
-      <p>
-        Real-Time Analytics
-        <br />
-        With real-time information on hits, transfer volumes, and abandonment, you have the up-to-the second analytics you need to better target your audience.
-      </p>
-      <p>
-        Rapid Content Deployment
-        <br />
-        Within seconds of the initial transfer, your content will be propagated system wide.
-      </p>
-      <p>
-        Complete Content Control
-        <br />
-        Static and live content is managed directly through our online dashboard, providing an unprecedented level of direct control over content.
-      </p>
-      <p>
-        Massive Scalability
-        <br />
-        Easily grow your site to millions of viewers.
-      </p>
-      </div>
-</script>
+
+          
       <div id="footer">
         <p>i5labs &#169; | 450 Geary Street, Suite 400, San Francisco,  CA 94102 | 415.929.9999 | <a href="mailto:bizdev@i5labs.com">bizdev@i5labs.com</a></p>
       </div>
@@ -168,12 +119,6 @@
     </div>
     
     <script type="text/javascript"> var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www."); document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E")); </script> <script type="text/javascript"> try { var pageTracker = _gat._getTracker("UA-164431-9"); pageTracker._trackPageview(); } catch(err) {}</script>
-
-  <script src="js/libs/jquery-1.9.1.js"></script>
-  <script src="js/libs/handlebars-1.0.0-rc.3.js"></script>
-  <script src="js/libs/ember-1.0.0-rc.3.js"></script>
-  <script src="js/libs/ember-data.js"></script>
-  <script src="js/app.js"></script>
 
   </body>
         
