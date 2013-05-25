@@ -2,10 +2,10 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
   <head>
-  
+
     <link rel="stylesheet" type="text/css" href="reset-min.css" />
     <link rel="stylesheet" type="text/css" href="default.css" />
-	<link rel="stylesheet" type="text/css" href="css/jquery.lightbox-0.5.css" media="screen" /> 
+	<link rel="stylesheet" type="text/css" href="css/jquery.lightbox-0.5.css" media="screen" />
 
     <!--[if IE 8]>
         <link rel="stylesheet" href="ie8.css" type="text/css" />
@@ -17,26 +17,24 @@
         <link rel="stylesheet" href="ie6.css" type="text/css" />
 		<![endif]-->
     <title>i5labs</title>
-    
-    
   </head>
   <body>
-  
+
 <script type="text/x-handlebars">
-    <div id="container">
-      <a href="index.html" id="title"><img src="images/logoTitle.jpg" alt="i5labs" /></a>
-      <h1><span class="displace">i5labs</span></h1>
-      
-      <div id="navigation">
-        <a href="about.html" id="rolloverAbout" class="about"><span class="displace">About</span></a>
-        <a href="sfgovPortfolio.html" id="rolloverPortfolio" class="portfolio"><span class="displace">Portfolio</span></a>
-        <a href="http://blog.i5labs.com" id="rolloverBlog" class="blog"><span class="displace">Blog</span></a>
-        <a href="cdnIntroduction.html" id="rolloverCdn" class="cdn"><span class="displace">CDN</span></a>
-        <a href="contact.html" id="rolloverContact" class="contact"><span class="displace">Contact</span></a>
-      </div>
-            
-      <div id='cdn'>
-  <div id='cdnNavigation'>
+  <div id="container">
+    <a href="index.html" id="title"><img src="images/logoTitle.jpg" alt="i5labs" /></a>
+    <h1><span class="displace">i5labs</span></h1>
+
+    <div id="navigation">
+      <a href="about.html" id="rolloverAbout" class="about"><span class="displace">About</span></a>
+      <a href="sfgovPortfolio.html" id="rolloverPortfolio" class="portfolio"><span class="displace">Portfolio</span></a>
+      <a href="http://blog.i5labs.com" id="rolloverBlog" class="blog"><span class="displace">Blog</span></a>
+      <a href="cdnIntroduction.html" id="rolloverCdn" class="cdn"><span class="displace">CDN</span></a>
+      <a href="contact.html" id="rolloverContact" class="contact"><span class="displace">Contact</span></a>
+    </div>
+
+  <div id='cdn'>
+    <div id='cdnNavigation'>
     {{#view App.tabView}}
       <div class='flourish'>
         <div class='flourishTop'></div>
@@ -44,7 +42,6 @@
         <div class='flourishBottom'></div>
       </div>
       {{#linkTo "index"}} <img alt='Introduction' src='images/introductionTab.png' />{{/linkTo}}
-     
       {{outlet "intro"}}
     {{/view}}
 
@@ -54,7 +51,6 @@
         <div class='flourishMiddle'></div>
         <div class='flourishBottom'></div>
       </div>
-      
         {{#linkTo "how"}}<img alt='How it Works' src='images/howitworksTab.png' />{{/linkTo}}
         {{outlet "how"}}
     {{/view}}
@@ -79,32 +75,45 @@
     <div id='cdnPlanChooser'>
       <p>Choose a plan and start streaming today:</p>
       <div id='cdnPlanOption'>
-        <a href='cdnOption1.html'>
-          <img alt='50GB transfer / 1GB Storage / $100 per month' src='images/cdnOption1.png' />
-        </a>
-        <a href='cdnOption2.html'>
-          <img alt='150GB transfer / 10GB Storage / $250 per month' src='images/cdnOption2.png' />
-        </a>
-        <a href='cdnOption3.html'>
-          <img alt='500GB transfer / 25GB Storage / $500 per month' src='images/cdnOption3.png' />
-        </a>
-        <a href='cdnOption4.html'>
-          <img alt='1.25TB transfer / 50GB Storage / $1000 per month' src='images/cdnOption4.png' />
-        </a>
-        <a href='cdnOption5.html'>
-          <img alt='Custom Plans Available' src='images/cdnOption5.png' />
+    {{#each model}}
+      <img  {{action 'showPlan' this}} alt='50GB transfer / 1GB Storage / $100 per month' {{bindAttr src="image"}} />
+    {{/each}}
         </a>
         <p>*all plans include 30 day free trial and $100 setup fee</p>
       </div>
     </div>
-  </div>
-</div> 
-      <div id="footer">
-        <p>i5labs &#169; | 450 Geary Street, Suite 400, San Francisco,  CA 94102 | 415.929.9999 | <a href="mailto:bizdev@i5labs.com">bizdev@i5labs.com</a></p>
+
+    <div id="cdnSignUp" class="hidden">
+      <span class="pink" {{action 'showAllPlans'}}>All Plans</span> > <span class="grey"> {{selectedPlan.transfer}} GB transfer plan</span><br>
+
+      <div class='planDetail'>
+        <p class='size'>{{selectedPlan.transfer}}</p>
+        <p class='unit'>GB</p>
+        <p class='extra'>(${{selectedPlan.extratransfer}} / additional gigabyte)</p>
+        <p class='use'>monthly transfer</p>
       </div>
-        
+      <div class='planDetail'>
+        <p class='size'>{{selectedPlan.storage}}</p>
+        <p class='unit'>GB</p>
+        <p class='extra'>(${{selectedPlan.extrastorage}} / additional gigabyte)</p>
+        <p class='use'>storage</p>
+      </div>
+      <div class='planDetail'>
+        <p class='size'>30</p>
+        <p class='unit'>Day</p>
+        <p class='use'>free trial</p>
+      </div>
+      <p class='frequency'>per month</p>
+      <p class='price'>${{selectedPlan.price}}</p>
     </div>
-    </script>
+      
+    </div>
+  </div>
+  <div id="footer">
+     <p>i5labs &#169; | 450 Geary Street, Suite 400, San Francisco,  CA 94102 | 415.929.9999 | <a href="mailto:bizdev@i5labs.com">bizdev@i5labs.com</a></p>
+  </div>
+</div>
+</script>
   <script type="text/x-handlebars" data-template-name="intro">
           <p>i5labs is a provider of global content delivery network services. Stream video and other content anywhere at lightning-fast speeds. This is all made possible by our global peer-based network tied directly into the backbone of the Internet.</p>
       <p>Our content management and reporting console makes it easy to manage content while maximizing delivery efficiency. We deliver real time analytics and reporting tools, all from a simple web interface.</p>
@@ -145,19 +154,19 @@
       <p>Jason Wong</p>
       <p>CEO</p>
 </script>
- <script type='text/javascript' src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script> 
+ <script type='text/javascript' src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script src="js/libs/handlebars-1.0.0-rc.3.js"></script>
   <script src="js/libs/ember-1.0.0-rc.3.js"></script>
   <script src="js/libs/ember-data.js"></script>
   <script src="js/app.js"></script>
-      <script type="text/javascript"> var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www."); document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E")); </script> <script type="text/javascript"> try { var pageTracker = _gat._getTracker("UA-164431-9"); pageTracker._trackPageview(); } catch(err) {}</script>
+     <script type="text/javascript"> var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www."); document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E")); </script> <script type="text/javascript"> try { var pageTracker = _gat._getTracker("UA-164431-9"); pageTracker._trackPageview(); } catch(err) {}</script>
 
     <script type="text/javascript" src="js/jquery.lightbox-0.5.min.js"></script>
     <script type='text/javascript' src='js/jquery.validate.js'></script>
     <script type='text/javascript' src="http://ionami.us1.list-manage.com/js/jquery.form.js"></script>
     <script type='text/javascript'>
       jQuery.validator.addMethod("phone", function(phone_number, element) {
-        phone_number = phone_number.replace(/\s+/g, ""); 
+        phone_number = phone_number.replace(/\s+/g, "");
         return this.optional(element) || phone_number.length > 9 &&
         phone_number.match(/^(1-?)?(\([2-9]\d{2}\)|[2-9]\d{2})-?[2-9]\d{2}-?\d{4}$/);
       }, "Please specify a valid phone number");
@@ -175,7 +184,7 @@
           errorPlacement: function(){ /* Don't show error */ }
         });
       });
-    </script>
+    </script> 
   </body>
-        
+
 </html>

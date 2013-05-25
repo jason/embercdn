@@ -36,15 +36,19 @@ App.AdvantageRoute = Ember.Route.extend({
       this.setPlan(evt);
       this.viewPlan();
     },
-    
+
     setPlan: function(evt) {
       this.set('selectedPlan', App.Plan.find(evt.id));
     },
 
     viewPlan: function() {
-      $('#plans').hide();
-      $('#plan').show();
-   }
+      $('#cdnPlanChooser').hide();
+      $('#cdnSignUp').show();
+   },
+    showAllPlans: function() {
+      $('#cdnPlanChooser').show();
+      $('#cdnSignUp').hide();
+    }
  });
 
 App.tabView = Ember.View.extend({
@@ -59,24 +63,34 @@ App.Store = DS.Store.extend({
 });
 
 App.Plan = DS.Model.extend({
-  transfer: DS.attr('number'),
-  storage: DS.attr('number'),
-  price: DS.attr('number')
+  transfer: DS.attr('string'),
+  storage: DS.attr('string'),
+  price: DS.attr('string'),
+  image: DS.attr('string')
 });
 
 App.Plan.FIXTURES = [{
-  id: 1,
-  transfer: 50,
-  storage: 1,
-  price: 100
+  id: "1",
+  transfer: "50",
+  storage: "1",
+  price: "100",
+  image: "images/cdnOption1.png"
 }, {
   id: 2,
-  transfer: 150,
-  storage: 10,
-  price: 250
+  transfer: "150",
+  storage: "10",
+  price: "250",
+  image: "images/cdnOption3.png"
 }, {
   id: 3,
-  transfer: 500,
-  storage: 25,
-  price: 500
+  transfer: "500",
+  storage: "25",
+  price: "500",
+  image: "images/cdnOption3.png"
+}, {
+    id: 4,
+    transfer: "custom",
+    storage: "custom",
+    price: "custom",
+    image: "images/cdnOption5.png"
 }];
