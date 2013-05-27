@@ -5,6 +5,7 @@
 
   <link rel="stylesheet" type="text/css" href="reset-min.css" />
   <link rel="stylesheet" type="text/css" href="default.css" />
+  <link rel="stylesheet" type="text/css" href="css/style.css" />
 	<link rel="stylesheet" type="text/css" href="css/jquery.lightbox-0.5.css" media="screen" />
 
   <!--[if IE 8]>
@@ -84,7 +85,9 @@
       </div>
 
       <div id="cdnSignUp" class="hidden">
-        <span class="pink" {{action 'showAllPlans'}}>All Plans</span> > <span class="grey"> {{selectedPlan.transfer}} GB transfer plan</span><br>
+        <span class="pink" {{action 'showAllPlans'}}>All Plans</span>
+        <span class="grey"> {{selectedPlan.transfer}} GB transfer plan</span>
+        <br>
 
         <div class='planDetail'>
           <p class='size'>{{selectedPlan.transfer}}</p>

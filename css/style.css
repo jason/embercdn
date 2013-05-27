@@ -5,3 +5,12 @@ html, body {
 .hidden {
   display: none;
 }
+
+.modal {
+  position: absolute;
+  z-index: 100;
+}
+
+#cdnSignUp {
+  /*background-color: #211b1d; */
+}
