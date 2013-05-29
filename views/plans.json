@@ -1,0 +1,24 @@
+{
+  id: "1",
+  transfer: "50",
+  storage: "1",
+  price: "100",
+  image: "images/cdnOption1.png"
+}, {
+  id: 2,
+  transfer: "150",
+  storage: "10",
+  price: "250",
+  image: "images/cdnOption3.png"
+}, {
+  id: 3,
+  transfer: "500",
+  storage: "25",
+  price: "500",
+  image: "images/cdnOption3.png"
+}, {
+    id: 4,
+    transfer: "custom",
+    storage: "custom",
+    price: "custom",
+    image: "images/cdnOption5.png"}

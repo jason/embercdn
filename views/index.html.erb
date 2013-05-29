@@ -3,9 +3,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 <head>
 
-  <link rel="stylesheet" type="text/css" href="reset-min.css" />
-  <link rel="stylesheet" type="text/css" href="default.css" />
-  <link rel="stylesheet" type="text/css" href="css/style.css" />
+  <link rel="stylesheet" type="text/css" href="css/reset-min.css" />
+  <link rel="stylesheet" type="text/css" href="css/default.css" />
 	<link rel="stylesheet" type="text/css" href="css/jquery.lightbox-0.5.css" media="screen" />
 
   <!--[if IE 8]>
@@ -66,13 +65,17 @@
           {{outlet "advantage"}}
       {{/view}}
     </div>
+
     <div id='cdnContent'>
+
+
       <div class='flourish'>
         <div class='flourishTop'></div>
         <div class='flourishMiddle'></div>
         <div class='flourishBottom'></div>
       </div>
       <img alt='30 Day Free Trial' src='images/freetrialTab.png' />
+    {{#if planNotPicked}}
       <div id='cdnPlanChooser'>
         <p>Choose a plan and start streaming today:</p>
         <div id='cdnPlanOption'>
@@ -83,8 +86,8 @@
           <p>*all plans include 30 day free trial and $100 setup fee</p>
         </div>
       </div>
-
-      <div id="cdnSignUp" class="hidden">
+    {{else}}
+      <div id="plan">
         <span class="pink" {{action 'showAllPlans'}}>All Plans</span>
         <span class="grey"> {{selectedPlan.transfer}} GB transfer plan</span>
         <br>
@@ -109,8 +112,28 @@
         <p class='frequency'>per month</p>
         <p class='price'>${{selectedPlan.price}}</p>
       </div>
-        
+      <div id='cdnForm'>
+        <form>
+          <div class='fields'>
+            <label for='contact_name'>Name</label>
+            {{view Ember.TextField valueBinding="cdnSignup.name"}}
+            <!--<input class='required' id='contact_name' {{bindAttr valueBinding=cdnSignUp.name}} title='Please enter your full name' type='text' />
+            <label for='contact_phone'>Phone</label>
+            <input class='phone' id='contact_phone' name='lead[phone]' title='Please enter a valid phone number.' type='text' />
+            <label for='contact_email'>Email</label>
+            <input class='required email' id='contact_email' name='lead[email]' title='Please enter a valid email' type='text' />
+            <label for='contact_company'>Company</label>
+            <input id='contact_company' name='lead[company_name]' title='Please enter your company name' type='text' />
+            <input name='tag_1' type='hidden' value='Google Adwords' />
+            <input name='lead[custom_label_1]' type='hidden' value='Plan' />
+            <input name='lead[custom_value_1]' type='hidden' value='$100 per month' />-->
+          </div>
+          <div class='cdnSignUpButton'>
+            <input alt='submit' name='commit' src='images/cdnSignUpButton.gif' type='image' />
+          </div>
+        </form>
       </div>
+    {{/if}}
     </div>
     <div id="footer">
        <p>i5labs &#169; | 450 Geary Street, Suite 400, San Francisco,  CA 94102 | 415.929.9999 | <a href="mailto:bizdev@i5labs.com">bizdev@i5labs.com</a></p>
@@ -158,16 +181,16 @@
     <p>CEO</p>
   </script>
   <script type='text/javascript' src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-  <script src="js/libs/handlebars-1.0.0-rc.3.js"></script>
-  <script src="js/libs/ember-1.0.0-rc.3.js"></script>
+  <script src="js/libs/handlebars-1.0.0-rc.4.js"></script>
+  <script src="js/libs/ember-1.0.0-rc.4.js"></script>
   <script src="js/libs/ember-data-0.13.js"></script>
   <script src="js/app.js"></script>
   <script type="text/javascript"> var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www."); document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E")); </script> <script type="text/javascript"> try { var pageTracker = _gat._getTracker("UA-164431-9"); pageTracker._trackPageview(); } catch(err) {}</script>
 
   <script type="text/javascript" src="js/jquery.lightbox-0.5.min.js"></script>
-  <script type='text/javascript' src='js/jquery.validate.js'></script>
+  <!-- <script type='text/javascript' src='js/jquery.validate.js'></script> -->
   <script type='text/javascript' src="http://ionami.us1.list-manage.com/js/jquery.form.js"></script>
-  <script type='text/javascript'>
+ <!-- <script type='text/javascript'>
     jQuery.validator.addMethod("phone", function(phone_number, element) {
       phone_number = phone_number.replace(/\s+/g, "");
       return this.optional(element) || phone_number.length > 9 &&
@@ -187,7 +210,7 @@
         errorPlacement: function(){ /* Don't show error */ }
       });
     });
-  </script> 
+  </script> -->
 
   </body>
 </html>

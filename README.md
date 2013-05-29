@@ -1,7 +1,6 @@
-This is a simple Ember experiment, to learn routing, variables and more, using the CDN signup at [http://www.i5labs.com/cdnIntroduction.html](http://www.i5labs.com/cdnIntroduction.html) as a base.
+Minimal web to lead example for the close.io API.
 
-TO DO
-  * Add validations with Ember-validate (haven't chosen a library yet)
-  * Smooth Transitions with [https://github.com/billysbilling/ember-animated-outlet](https://github.com/billysbilling/ember-animated-outlet)
-  * Integrate with [https://github.com/jason/closeioweb2lead](https://github.com/jason/closeioweb2lead)
-  * Deploy to Heroku
+Requires HTTParty to connect with close.io, Sinatra to serve the form, and Slim, because it's a phat templating language.  The "lead" hash is converted to JSON, from Sinatra form parameters.
+
+TODO:
+Add tests.  Yes, I should have started with the tests first.

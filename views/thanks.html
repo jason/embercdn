@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+  <head>
+
+    <link rel="stylesheet" type="text/css" href="css/reset-min.css" />
+    <link rel="stylesheet" type="text/css" href="css/default.css" />
+	<link rel="stylesheet" type="text/css" href="css/jquery.lightbox-0.5.css" media="screen" />
+
+    <script type='text/javascript' src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+  	<script type="text/javascript" src="js/jquery.lightbox-0.5.min.js"></script>
+    <script type='text/javascript' src='js/jquery.validate.js'></script>
+    <script type='text/javascript' src="http://ionami.us1.list-manage.com/js/jquery.form.js"></script>
+    <script type='text/javascript'>
+      jQuery.validator.addMethod("phone", function(phone_number, element) {
+        phone_number = phone_number.replace(/\s+/g, "");
+        return this.optional(element) || phone_number.length > 9 &&
+        phone_number.match(/^(1-?)?(\([2-9]\d{2}\)|[2-9]\d{2})-?[2-9]\d{2}-?\d{4}$/);
+      }, "Please specify a valid phone number");
+
+      $(document).ready(function(){
+        $('a[rel=lightbox]').lightBox();
+        $("#cdnForm form").validate({
+          errorPlacement: function(label, e){ label.insertBefore(e); }
+        });
+        $("#mc-embedded-subscribe-form").validate({
+          submitHandler: function(form) {
+            if($('#mce-Email').value == 'Email') $('#mce-Email').value = '';
+            form.submit();
+          },
+          errorPlacement: function(){ /* Don't show error */ }
+        });
+      });
+    </script>
+
+    <!--[if IE 8]>
+        <link rel="stylesheet" href="ie8.css" type="text/css" />
+		<![endif]-->
+    <!--[if IE 7]>
+        <link rel="stylesheet" href="ie7.css" type="text/css" />
+		<![endif]-->
+    <!--[if IE 6]>
+        <link rel="stylesheet" href="ie6.css" type="text/css" />
+		<![endif]-->
+    <title>i5labs</title>
+
+
+  </head>
+  <body>
+
+    <div id="container">
+      <a href="index.html" id="title"><img src="images/logoTitle.jpg" alt="i5labs" /></a>
+      <h1><span class="displace">i5labs</span></h1>
+
+      <div id="navigation">
+        <a href="about.html" id="rolloverAbout" class="about"><span class="displace">About</span></a>
+        <a href="sfgovPortfolio.html" id="rolloverPortfolio" class="portfolio"><span class="displace">Portfolio</span></a>
+        <a href="http://blog.i5labs.com" id="rolloverBlog" class="blog"><span class="displace">Blog</span></a>
+        <a href="cdnIntroduction.html" id="rolloverCdn" class="cdn"><span class="displace">CDN</span></a>
+        <a href="contact.html" id="rolloverContact" class="contact"><span class="displace">Contact</span></a>
+      </div>
+
+      <div id='cdn'>
+  <div id='cdnNavigation'>
+    <div id='openTab'>
+      <div class='flourish'>
+        <div class='flourishTop'></div>
+        <div class='flourishMiddle'></div>
+        <div class='flourishBottom'></div>
+      </div>
+      <img alt='Introduction' src='images/introductionTab.png' />
+      <p>i5labs is a provider of global content delivery network services. Stream video and other content anywhere at lightning-fast speeds. This is all made possible by our global peer-based network tied directly into the backbone of the Internet.</p>
+      <p>Our content management and reporting console makes it easy to manage content while maximizing delivery efficiency. We  deliver real time analytics and reporting tools, all from a simple browser based web interface.</p>
+      <p>Whether you need to deliver millions of streams of live HD video worldwide, or need large file delivery, our network scales to meet your needs.</p>
+    </div>
+    <div class='closedTab'>
+      <div class='flourish'>
+        <div class='flourishTop'></div>
+        <div class='flourishMiddle'></div>
+        <div class='flourishBottom'></div>
+      </div>
+      <a href='cdnWorks.html'>
+        <img alt='How it Works' src='images/howitworksTab.png' />
+      </a>
+    </div>
+    <div class='closedTab'>
+      <div class='flourish'>
+        <div class='flourishTop'></div>
+        <div class='flourishMiddle'></div>
+        <div class='flourishBottom'></div>
+      </div>
+      <a href='cdnAdvantage.html'>
+        <img alt='The i5labs Advantage' src='images/advantageTab.png' />
+      </a>
+    </div>
+  </div>
+  <div id='cdnContent'>
+    <div class='flourish'>
+      <div class='flourishTop'></div>
+      <div class='flourishMiddle'></div>
+      <div class='flourishBottom'></div>
+    </div>
+    <img alt='30 Day Free Trial' src='images/freetrialTab.png' />
+    <div id='cdnPlanChooser'>
+      <p>
+        Thank you for partnering with i5labs.
+        <br />
+        We will contact you soon with your new account.
+      </p>
+    </div>
+  </div>
+</div>
+
+
+      <div id="footer">
+        <p>i5labs &#169; | 450 Geary Street, Suite 400, San Francisco,  CA 94102 | 415.929.9999 | <a href="mailto:bizdev@i5labs.com">bizdev@i5labs.com</a></p>
+      </div>
+
+    </div>
+
+    <script type="text/javascript"> var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www."); document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E")); </script> <script type="text/javascript"> try { var pageTracker = _gat._getTracker("UA-164431-9"); pageTracker._trackPageview(); } catch(err) {}</script>
+
+  </body>
+
+</html>
+

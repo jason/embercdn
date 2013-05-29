@@ -10,7 +10,6 @@ App.ApplicationRoute = Ember.Route.extend({
   model: function() {
     return App.Plan.find();
   }
-
 });
 
 App.IndexRoute = Ember.Route.extend({
@@ -18,6 +17,12 @@ App.IndexRoute = Ember.Route.extend({
     this.render('intro', { outlet: 'intro' });
    }
  });
+
+App.PlansRoute = Ember.Route.extend({
+  model: function() {
+    return App.Plan.find();
+  }
+});
 
 App.HowRoute = Ember.Route.extend({
   renderTemplate: function() {
@@ -32,23 +37,26 @@ App.AdvantageRoute = Ember.Route.extend({
 });
 
  App.ApplicationController = Ember.ObjectController.extend({
-   showPlan: function(evt) {
-      this.setPlan(evt);
-      this.viewPlan();
-    },
+  showPlan: function(evt) {
+    this.setPlan(evt);
+    this.viewPlan();
+  },
 
-    setPlan: function(evt) {
-      this.set('selectedPlan', App.Plan.find(evt.id));
-    },
+  setPlan: function(evt) {
+    this.set('selectedPlan', App.Plan.find(evt.id));
+  },
 
-    viewPlan: function() {
-      $('#cdnPlanChooser').hide();
-      $('#cdnSignUp').show();
-   },
-    showAllPlans: function() {
-      $('#cdnPlanChooser').show();
-      $('#cdnSignUp').hide();
-    }
+  viewPlan: function() {
+    this.set('planNotPicked', false);
+  },
+    
+  showAllPlans: function() {
+    this.set('planNotPicked', true);
+  },
+    
+  planNotPicked: true,
+
+  //cdnSignUp: App.CDNSignup.createRecord();
  });
 
 App.tabView = Ember.View.extend({
@@ -58,8 +66,7 @@ App.tabView = Ember.View.extend({
   }.property('childViews.firstObject.active')
 }),
 App.Store = DS.Store.extend({
-    revision: 12,
-    adapter: 'DS.FixtureAdapter'
+    adapter: 'DS.RESTAdapter'
 });
 
 App.Plan = DS.Model.extend({
@@ -69,28 +76,11 @@ App.Plan = DS.Model.extend({
   image: DS.attr('string')
 });
 
-App.Plan.FIXTURES = [{
-  id: "1",
-  transfer: "50",
-  storage: "1",
-  price: "100",
-  image: "images/cdnOption1.png"
-}, {
-  id: 2,
-  transfer: "150",
-  storage: "10",
-  price: "250",
-  image: "images/cdnOption3.png"
-}, {
-  id: 3,
-  transfer: "500",
-  storage: "25",
-  price: "500",
-  image: "images/cdnOption3.png"
-}, {
-    id: 4,
-    transfer: "custom",
-    storage: "custom",
-    price: "custom",
-    image: "images/cdnOption5.png"
-}];
+App.CDNSignup = DS.Model.extend({
+  name: DS.attr('string'),
+  phone: DS.attr('string'),
+  email: DS.attr('string'),
+  company: DS.attr('string'),
+  plan: DS.attr('string')
+});
+

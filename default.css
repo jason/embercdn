@@ -1,10 +1,12 @@
 html, body {
   width: 100%;
-  background: #211b1d url('images/backgroundImage.jpg') no-repeat; }
+  background: #211b1d url('/images/backgroundImage.jpg') no-repeat; }
 
 p, a, h1, h2, input, option, select, textarea, label {
-  font-family: arial, helvetica, sans-serif; }
-
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+  font-weight: 300;
+}
+  
 p, label, option, select, textarea, input {
   color: #666666;
   font-size: 14px;

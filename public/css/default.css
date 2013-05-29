@@ -1,9 +1,15 @@
+.hidden {
+  display: none;
+}
+
 html, body {
   width: 100%;
-  background: #211b1d url('images/backgroundImage.jpg') no-repeat; }
+  background: #211b1d url('/images/backgroundImage.jpg') no-repeat; }
 
 p, a, h1, h2, input, option, select, textarea, label {
-  font-family: arial, helvetica, sans-serif; }
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+  font-weight:300;
+   }
 
 p, label, option, select, textarea, input {
   color: #666666;
@@ -99,27 +105,27 @@ a.about, a.portfolio, a.blog, a.cdn, a.contact {
 
 a.about {
   width: 79px;
-  background: url('images/navigationBtns.gif') no-repeat;
+  background: url('/images/navigationBtns.gif') no-repeat;
   background-position: 0 0; }
 
 a.portfolio {
   width: 128px;
-  background: url('images/navigationBtns.gif') no-repeat;
+  background: url('/images/navigationBtns.gif') no-repeat;
   background-position: -79px 0; }
 
 a.blog {
   width: 65px;
-  background: url('images/navigationBtns.gif') no-repeat;
+  background: url('/images/navigationBtns.gif') no-repeat;
   background-position: -207px 0; }
 
 a.cdn {
   width: 53px;
-  background: url('images/navigationBtns.gif') no-repeat;
+  background: url('/images/navigationBtns.gif') no-repeat;
   background-position: -272px 0; }
 
 a.contact {
   width: 115px;
-  background: url('images/navigationBtns.gif') no-repeat;
+  background: url('/images/navigationBtns.gif') no-repeat;
   background-position: -325px 0; }
 
 a#rolloverAbout:hover {
@@ -167,7 +173,7 @@ a#rolloverContact:hover {
   margin: 71px 0 0 0; }
 
 #ourPhilosophy, #recentNews, #followUs, #signUp {
-  background: transparent url('images/boxBackPort.png') repeat;
+  background: transparent url('/images/boxBackPort.png') repeat;
   height: 180px;
   float: left; }
 
@@ -224,14 +230,14 @@ a#rolloverContact:hover {
   width: 440px;
   height: 290px;
   float: left;
-  background: transparent url('images/boxBackPort.png') repeat;
+  background: transparent url('/images/boxBackPort.png') repeat;
   margin: 0 10px 0 0; }
 
 #ourProcess {
   width: 410px;
   height: 290px;
   float: right;
-  background: transparent url('images/boxBackPort.png') repeat; }
+  background: transparent url('/images/boxBackPort.png') repeat; }
   #ourProcess p {
     line-height: 24px; }
 
@@ -243,20 +249,20 @@ a#rolloverContact:hover {
 #portfolioNavigation {
   margin-right: 10px; }
 
-#portfolio #portfolioNavigation, #portfolio #openTab, #portfolio .closedTab {
+#portfolio #portfolioNavigation, #portfolio .openTab, #portfolio .closedTab {
   width: 240px;
   float: left; }
-  #portfolio #portfolioNavigation a, #portfolio #openTab a, #portfolio .closedTab a {
+  #portfolio #portfolioNavigation a, #portfolio .openTab a, #portfolio .closedTab a {
     width: 200px; }
 
-#openTab {
+.openTab {
   height: 480px;
-  background: transparent url('images/boxBackPort.png') repeat;
+  background: transparent url('/images/boxBackPort.png') repeat;
   margin-bottom: 10px; }
 
 #portfolio .closedTab, #cdn .closedTab {
   height: 50px;
-  background: transparent url('images/boxBackPort.png') repeat;
+  background: transparent url('/images/boxBackPort.png') repeat;
   margin: 0 0 10px 0; }
   #portfolio .closedTab a, #cdn .closedTab a {
     margin: 0; }
@@ -265,7 +271,7 @@ a#rolloverContact:hover {
   width: 610px;
   height: 600px;
   float: left;
-  background: transparent url('images/boxBackPort.png') repeat; }
+  background: transparent url('/images/boxBackPort.png') repeat; }
   #portfolioContent p {
     width: 520px; }
 
@@ -284,25 +290,25 @@ a#rolloverContact:hover {
     margin: 15px 0 0 20px; }
 
 .sfgovBackground {
-  background: transparent url('images/sfgovBackground.jpg') no-repeat; }
+  background: transparent url('/images/sfgovBackground.jpg') no-repeat; }
 
 .wfBackground {
-  background: transparent url('images/wfBackground.jpg') no-repeat; }
+  background: transparent url('/images/wfBackground.jpg') no-repeat; }
 
 .nemsBackground {
-  background: transparent url('images/nemsBackground.jpg') no-repeat; }
+  background: transparent url('/images/nemsBackground.jpg') no-repeat; }
 
 .sfsafeBackground {
-  background: transparent url('images/sfsafeBackground.jpg') no-repeat; }
+  background: transparent url('/images/sfsafeBackground.jpg') no-repeat; }
 
 .zingBackground {
-  background: transparent url('images/zingBackground.jpg') no-repeat; }
+  background: transparent url('/images/zingBackground.jpg') no-repeat; }
 
 .pandoraBackground {
-  background: transparent url('images/pandoraBackground.jpg') no-repeat; }
+  background: transparent url('/images/pandoraBackground.jpg') no-repeat; }
 
 .epsonBackground {
-  background: transparent url('images/epsonBackground.jpg') no-repeat; }
+  background: transparent url('/images/epsonBackground.jpg') no-repeat; }
 
 #portfolioContent .example, #portfolioContent .exampleDummy {
   width: 130px;
@@ -311,7 +317,7 @@ a#rolloverContact:hover {
   margin: 113px -9px  0 10px; }
 
 #portfolioContent .example {
-  background: transparent url('images/boxBackPort.png') repeat; }
+  background: transparent url('/images/boxBackPort.png') repeat; }
   #portfolioContent .example a {
     margin: 13px 0 0 30px; }
 
@@ -319,7 +325,7 @@ a#rolloverContact:hover {
   width: 261px;
   height: 100px;
   float: left;
-  background: transparent url('images/boxBackPort.png') repeat;
+  background: transparent url('/images/boxBackPort.png') repeat;
   margin: 1px 200px 0 10px; }
   #services p {
     margin: 10px 0 0 20px;
@@ -329,7 +335,7 @@ a#rolloverContact:hover {
   width: 261px;
   height: 50px;
   float: left;
-  background: transparent url('images/boxBackPort.png') repeat;
+  background: transparent url('/images/boxBackPort.png') repeat;
   margin: 1px 200px  0 10px; }
   #url a {
     margin: 18px 0 0 20px;
@@ -342,10 +348,10 @@ a#rolloverContact:hover {
   margin: 22px 0 0 0;
   float: left; }
 
-#cdn #cdnNavigation, #cdn #openTab, #cdn .closedTab {
+#cdn #cdnNavigation, #cdn .openTab, #cdn .closedTab {
   width: 430px;
   float: left; }
-  #cdn #cdnNavigation p, #cdn #openTab p, #cdn .closedTab p {
+  #cdn #cdnNavigation p, #cdn .openTab p, #cdn .closedTab p {
     width: 380px;
     margin: 15px 0 0 20px; }
 
@@ -356,12 +362,12 @@ a#rolloverContact:hover {
   width: 420px;
   height: 600px;
   float: left;
-  background: transparent url('images/boxBackPort.png') repeat; }
+  background: transparent url('/images/boxBackPort.png') repeat; }
 
 #cdnPlanChooser {
   width: 390px;
   height: 530px;
-  background: url("images/cdnBackground.jpg") no-repeat;
+  background: url("/images/cdnBackground.jpg") no-repeat;
   float: left;
   margin: 10px 0 0 10px; }
   #cdnPlanChooser img {
@@ -439,7 +445,7 @@ p.frequency {
   #cdnForm input {
     width: 270px;
     height: 20px;
-    background: url("images/cdnFormBackground.gif") no-repeat; }
+    background: url("/images/cdnFormBackground.gif") no-repeat; }
     #cdnForm input.error {
       border: solid 2px red; }
   #cdnForm .cdnSignUpButton input {
@@ -456,6 +462,6 @@ p.frequency {
   width: 390px;
   height: 180px;
   margin: 442px 0 0 0;
-  background: transparent url('images/boxBackPort.png') repeat; }
+  background: transparent url('/images/boxBackPort.png') repeat; }
   #contact p {
     line-height: 16px; }
