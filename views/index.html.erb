@@ -74,7 +74,7 @@
         <div class='flourishMiddle'></div>
         <div class='flourishBottom'></div>
       </div>
-      <img alt='30 Day Free Trial' src='images/freetrialTab.png' />
+      <img id="trialimage" alt='30 Day Free Trial' src='images/freetrialTab.png' />
     {{#if planNotPicked}}
       <div id='cdnPlanChooser'>
         <p>Choose a plan and start streaming today:</p>
@@ -88,8 +88,8 @@
       </div>
     {{else}}
       <div id="plan">
-        <span class="pink" {{action 'showAllPlans'}}>All Plans</span>
-        <span class="grey"> {{selectedPlan.transfer}} GB transfer plan</span>
+        <span class="pink breadcrumb" {{action 'showAllPlans'}}>All Plans</span>
+        <span class="grey">> {{selectedPlan.transfer}} GB transfer plan</span>
         <br>
 
         <div class='planDetail'>

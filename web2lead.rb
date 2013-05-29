@@ -3,6 +3,8 @@ require 'httparty'
 require 'json'
 require 'sinatra'
 require 'sinatra/json'
+require 'sinatra/contrib'
+require 'sinatra/reloader' if development?
 require 'bundler/setup'
 require 'slim'
 
@@ -24,19 +26,25 @@ get '/plans' do
   { plans: [{
     id: "1",
     transfer: "50",
+    extratransfer: "2",
     storage: "1",
+    extrastorage: "2",
     price: "100",
     image: 'images/cdnOption1.png'
   }, {
     id: 2,
     transfer: "150",
+    extratransfer: "2",
     storage: "10",
+    extrastorage: "2",
     price: "250",
     image: 'images/cdnOption2.png'
   }, {
     id: 3,
     transfer: "500",
+    extratransfer: "1",
     storage: "25",
+    extrastorage: "2",
     price: "500",
     image: 'images/cdnOption3.png'
   }, {
@@ -50,10 +58,10 @@ end
 
 post '/cdnSignUp' do
     lead = {
-            :name => params[:company], 
-            :contacts => [{ 
+            :name => params[:company],
+            :contacts => [{
               :name => params[:name].to_s,
-              :phones => [{ :phone => params[:phone].to_s, :type => "office" }], 
+              :phones => [{ :phone => params[:phone].to_s, :type => "office" }],
               :emails => [{ :email => params[:email].to_s, :type => "office" }]
             }],
             :custom => { :plan => params[:plan]}

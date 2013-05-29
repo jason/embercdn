@@ -49,11 +49,11 @@ App.AdvantageRoute = Ember.Route.extend({
   viewPlan: function() {
     this.set('planNotPicked', false);
   },
-    
+
   showAllPlans: function() {
     this.set('planNotPicked', true);
   },
-    
+
   planNotPicked: true,
 
   //cdnSignUp: App.CDNSignup.createRecord();
@@ -73,7 +73,9 @@ App.Plan = DS.Model.extend({
   transfer: DS.attr('string'),
   storage: DS.attr('string'),
   price: DS.attr('string'),
-  image: DS.attr('string')
+  image: DS.attr('string'),
+  extratransfer: DS.attr('string'),
+  extrastorage: DS.attr('string')
 });
 
 App.CDNSignup = DS.Model.extend({

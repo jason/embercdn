@@ -1,13 +1,22 @@
 .hidden {
   display: none;
 }
-
+#trialimage {
+}
 html, body {
   width: 100%;
   background: #211b1d url('/images/backgroundImage.jpg') no-repeat; }
 
-p, a, h1, h2, input, option, select, textarea, label {
-  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+.pink {
+  color: #ae7d8a
+}
+
+.grey {
+  color: #666;
+}
+
+p, a, h1, h2, input, option, select, textarea, span, label {
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   font-weight:300;
    }
 
@@ -394,7 +403,7 @@ a#rolloverContact:hover {
   height: 60px;
   border-bottom: 1px #7a7677 solid;
   float: left;
-  margin: 10px 0 0 10px; }
+  margin: 5px 0 0 20px; }
 
 p.size {
   font-size: 36px;
@@ -406,7 +415,7 @@ p.unit {
   font-size: 24px;
   color: #979a66;
   text-shadow: #d6d8b5 0px 0px 1px;
-  margin: 13px 0 0 0; }
+  margin: 12px 0 0 0; }
 
 p.extra {
   margin: 13px 0 0 5px; }
@@ -457,7 +466,9 @@ p.frequency {
   #cdnForm .fields {
     float: left;
     width: 275px; }
-
+.breadcrumb {
+  margin: 0 0 0 20px;
+}
 #contact {
   width: 390px;
   height: 180px;

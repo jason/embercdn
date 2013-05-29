@@ -2,7 +2,7 @@ html, body {
   width: 100%;
   background: #211b1d url('/images/backgroundImage.jpg') no-repeat; }
 
-p, a, h1, h2, input, option, select, textarea, label {
+p, a, h1, h2, input, option, select, textarea, label, span {
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
   font-weight: 300;
 }
